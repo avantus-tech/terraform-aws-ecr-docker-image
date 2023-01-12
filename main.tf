@@ -14,10 +14,10 @@ resource "aws_ecr_lifecycle_policy" "repo-policy" {
   "rules": [
     {
       "rulePriority": 1,
-      "description": "Keep image deployed with tag '${var.tag}''",
+      "description": "Keep image deployed with tag '${local.docker_tag}''",
       "selection": {
         "tagStatus": "tagged",
-        "tagPrefixList": ["${var.tag}"],
+        "tagPrefixList": ["${local.docker_tag}"],
         "countType": "imageCountMoreThan",
         "countNumber": 1
       },
@@ -42,4 +42,3 @@ resource "aws_ecr_lifecycle_policy" "repo-policy" {
 EOF
 
 }
-

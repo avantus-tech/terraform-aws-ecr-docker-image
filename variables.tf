@@ -9,7 +9,7 @@ variable "source_path" {
 }
 
 variable "tag" {
-  description = "Tag to use for deployed Docker image"
+  description = "Tag to use for deployed Docker image, or 'hash' to use the hash of the Docker build directory"
   type        = string
   default     = "latest"
 }
@@ -25,4 +25,3 @@ variable "push_script" {
   type        = string
   default     = ""
 }
-

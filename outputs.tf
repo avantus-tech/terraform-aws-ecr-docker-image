@@ -5,11 +5,10 @@ output "repository_url" {
 
 output "tag" {
   description = "Docker image tag"
-  value       = var.tag
+  value       = local.docker_tag
 }
 
 output "hash" {
   description = "Docker image source hash"
   value       = data.external.hash.result["hash"]
 }
-
